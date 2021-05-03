@@ -22,14 +22,16 @@ $files = sql("SELECT  * FROM `qrfile`.`images`;");
         <th>fileindex</th>
         <th>filename</th>
         <th>fileHash</th>
+        <th>Download Link</th>
     </tr>
     <?
     while ($row = $files->fetch_assoc()) {
         echo "<tr>
         <td>" . $row["id"] . "</td>
         <td>" . $row["file_name"] . "</td>
-        <td>" . $row["imgHash"] . "</td>
-        </tr>";
+        <td>" . $row["imgHash"] . '</td>
+        <td><a href="/qrfile.php?file='. $row["imgHash"] . '">dl link</a></td>
+        </tr>';
     }
     echo "</table>";
 
