@@ -8,10 +8,11 @@ if (isset($_GET["file"])){
  echo "<br>SQL: ".$sql . '<br>';
  $result = sql($sql);
  //echo "<br> resultre:" . $result. '<br>';
- //echo "<br>filename: " .$result["filename"];
+ 
  while ($row = $result->fetch_assoc()) {
-    echo "<br> Filname: " . $row["filename"] . 
-        "<br>content: " . $row["base64"] ;
+    echo "<br>filename: " . $row["file_name"] . '<br>';
+    echo "<br> Filname: " . $row["file_name"] ;
+    echo '<img src="' . $row["file_name"] . '" />';
+      #  "<br>content: " . $row["base64"] ;
  }
 }
-echo ""; 
