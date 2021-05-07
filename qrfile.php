@@ -1,6 +1,7 @@
 <?
 include_once('./header.php');
 
+echo '<p><a href="/">himatte</a></p>';
 if (isset($_GET["file"])){
  $filehash=$_GET["file"];
  echo "filehash  :" . $filehash . '<br>';
