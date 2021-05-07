@@ -48,14 +48,13 @@ if ($uploadOk == 0) {
     $fileName = $_FILES["fileToUpload"]["name"];
     $filehash =  hash('tiger192,3', $fileName);
     $timestamp = date("Y-m-d H:i:s");
-    $sql="INSERT INTO `qrfile`.`images` (`file_name`, `uploaded_on`, `base64`, `imgHash`) 
+    $sql="INSERT INTO `qrfile`.`images` (`file_name`, `uploaded_on`, `imgName`, `imgHash`) 
         VALUES ('". $target_file . "', '" . $timestamp . "' ,
-         '". 'n/A' ."', '" . $filehash . "');";
+         '". basename($_FILES["fileToUpload"]["name"]) ."', '" . $filehash . "');";
+         echo $sql;
     $result = sql($sql);
+    echo $result;
   } else {
     echo "Sorry, there was an error uploading your file.";
   }
 }
-?>
-
-
