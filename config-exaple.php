@@ -3,8 +3,8 @@
 //SQL connect
 define('servername', 'localhost');
 //$servername = "localhost";
-define('username', 'user');
-define('password', 'pass');
+define('username', 'qrfile');
+define('password', 'test');
 define('dbname', 'qrfile');
 
 define('SiteName', 'Qrfile');

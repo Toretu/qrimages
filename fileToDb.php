@@ -30,10 +30,8 @@ if ($uploadOk == 0) {
     $base64 = 'data:image/' . $imageFileType . ';base64,' . base64_encode($data);
     $filehash =  hash('tiger192,3', $target_file);
     $timestamp = date("Y-m-d H:i:s");
-    $sql="INSERT INTO `qrfile`.`images` (`file_name`, `uploaded_on`, `base64`, `imgHash`) 
-        VALUES ('". $target_file . "', '" . $timestamp . "' ,
-         '". $base64 ."', '" . $filehash . "');";
+    $sql = "INSERT INTO `qrfile`.`images` (`file_name`, `uploaded_on`, `base64`, `imgHash`) 
+        VALUES ('" . $target_file . "', '" . $timestamp . "' ,
+         '" . $base64 . "', '" . $filehash . "');";
     $result = sql($sql);
-   
-    
 }
